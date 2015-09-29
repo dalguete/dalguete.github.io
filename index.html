@@ -1,10 +1,9 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Untitled Document.md</title><style></style></head><body id="preview">
-<h1><a id="About_My_Experiences_Creating_DEB_Packages_Plus_Ubuntus_PPA_0"></a>About My Experiences Creating DEB Packages Plus Ubuntu’s PPA</h1>
+<h1 id="about-my-experiences-creating-deb-packages-plus-ubuntus-ppa">About My Experiences Creating DEB Packages Plus Ubuntu's PPA</h1>
 <p>As a noob in the <em>deb</em> packaging process, it was a bit painful to get the whole stuff
 in place. After much reading and headaches, I finally made it. Here my conclusions:</p>
 <ul>
-<li>Ubuntu documentation on how to make things work (<a href="http://packaging.ubuntu.com/html/packaging-new-software.html">http://packaging.ubuntu.com/html/packaging-new-software.html</a>)
-is good, but it doesn’t cover all aspects, as installation scripts or pre/post
+<li>Ubuntu documentation on how to make things work (http://packaging.ubuntu.com/html/packaging-new-software.html)
+is good, but it doesn't cover all aspects, as installation scripts or pre/post
 scripts. It just give some general approaches or links as last resource, that turned
 out to be critical in my experience.
 Changing folders commands are not reliable as explained there. Some commands must be
@@ -13,34 +12,34 @@ And finally, what did the trick was to add <strong>install</strong> file. Withou
 was created in an incomplete fashion.</li>
 </ul>
 <p>Now, this is <strong>important</strong>, to include any file added, it is necessary to perform a <code>bzr add</code>.
-That’s not mentioned in docs, but without that, files like <strong>install</strong>, <strong>postinst</strong> and
-<strong>prerm</strong> weren’t included.</p>
-<p><strong>Important</strong> to mention too, it’s better to perform all the build process inside a
+That's not mentioned in docs, but without that, files like <strong>install</strong>, <strong>postinst</strong> and
+<strong>prerm</strong> weren't included.</p>
+<p><strong>Important</strong> to mention too, it's better to perform all the build process inside a
 sub folder, as the whole thing creates packages and folders in a place next to where
 the main code is located, not good, at all.</p>
 <ul>
 <li>
 <p>If you, as me, are not a bzr user, just add a .gitignore file to not track info
-generated in <em>.bzr</em> folder. You’ll still see <em>.git</em> folder inside PPA’s code link,
-but that’s fine and desirable.</p>
+generated in <em>.bzr</em> folder. You'll still see <em>.git</em> folder inside PPA's code link,
+but that's fine and desirable.</p>
 </li>
 <li>
-<p>There’s no need to remove <em>.git</em> folder while packing, as the system gets rid
+<p>There's no need to remove <em>.git</em> folder while packing, as the system gets rid
 of removing it.</p>
 </li>
 <li>
 <p>I got some ideas from this other places too, just to build a more complete understading
-of things:
-- <a href="http://askubuntu.com/questions/71199/manually-created-deb-how-do-i-upload-to-a-ppa">http://askubuntu.com/questions/71199/manually-created-deb-how-do-i-upload-to-a-ppa</a>
-- <a href="https://developer.ubuntu.com/en/publish/other-forms-of-submitting-apps/ppa/">https://developer.ubuntu.com/en/publish/other-forms-of-submitting-apps/ppa/</a>
-- <a href="http://askubuntu.com/questions/279686/how-to-package-a-simple-bash-script">http://askubuntu.com/questions/279686/how-to-package-a-simple-bash-script</a>
-- <a href="http://askubuntu.com/questions/27715/create-a-deb-package-from-scripts-or-binaries/27731#27731">http://askubuntu.com/questions/27715/create-a-deb-package-from-scripts-or-binaries/27731#27731</a>
-- <a href="http://askubuntu.com/questions/71510/how-do-i-create-a-ppa">http://askubuntu.com/questions/71510/how-do-i-create-a-ppa</a>
-- <a href="https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/">https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/</a></p>
+of things:</p>
+<ul>
+<li><a href="http://askubuntu.com/questions/71199/manually-created-deb-how-do-i-upload-to-a-ppa">http://askubuntu.com/questions/71199/manually-created-deb-how-do-i-upload-to-a-ppa</a></li>
+<li><a href="https://developer.ubuntu.com/en/publish/other-forms-of-submitting-apps/ppa/">https://developer.ubuntu.com/en/publish/other-forms-of-submitting-apps/ppa/</a></li>
+<li><a href="http://askubuntu.com/questions/279686/how-to-package-a-simple-bash-script">http://askubuntu.com/questions/279686/how-to-package-a-simple-bash-script</a></li>
+<li><a href="http://askubuntu.com/questions/27715/create-a-deb-package-from-scripts-or-binaries/27731#27731">http://askubuntu.com/questions/27715/create-a-deb-package-from-scripts-or-binaries/27731#27731</a></li>
+<li><a href="http://askubuntu.com/questions/71510/how-do-i-create-a-ppa">http://askubuntu.com/questions/71510/how-do-i-create-a-ppa</a></li>
+<li><a href="https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/">https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/</a></li>
+</ul>
 </li>
 </ul>
 <p>Things still not clear are differences between <strong>DEBIAN</strong> and <strong>debian</strong> folders.
 There is documentation either refering to one or the other. In the end, lowercase
 version seemed to do the trick in Ubuntu PPA relationship.</p>
-
-</body></html>
