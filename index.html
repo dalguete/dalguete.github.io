@@ -2,14 +2,20 @@
 <p>As a noob in the <em>deb</em> packaging process, it was a bit painful to get the whole stuff
 in place. After much reading and headaches, I finally made it. Here my conclusions:</p>
 <ul>
-<li>Ubuntu documentation on how to make things work (<a href="http://packaging.ubuntu.com/html/packaging-new-software.html">http://packaging.ubuntu.com/html/packaging-new-software.html</a>)
+<li>
+<p>As first and super important first step, do all defined here <a href="http://packaging.ubuntu.com/html/getting-set-up.html">http://packaging.ubuntu.com/html/getting-set-up.html</a>.
+There's a lot of things to set up, but it's the mandatory first step.</p>
+</li>
+<li>
+<p>Ubuntu documentation on how to make things work (<a href="http://packaging.ubuntu.com/html/packaging-new-software.html">http://packaging.ubuntu.com/html/packaging-new-software.html</a>)
 is good, but it doesn't cover all aspects, as installation scripts or pre/post
 scripts. It just give some general approaches or links as last resource, that turned
 out to be critical in my experience.
 Changing folders commands are not reliable as explained there. Some commands must be
 run at different folder levels.
 And finally, what did the trick was to add <strong>install</strong> file. Without it package
-was created in an incomplete fashion.</li>
+was created in an incomplete fashion.</p>
+</li>
 </ul>
 <p>Now, this is <strong>important</strong>, to include any file added, it is necessary to perform a <code>bzr add</code>.
 That's not mentioned in docs, but without that, files like <strong>install</strong>, <strong>postinst</strong> and
@@ -26,6 +32,11 @@ but that's fine and desirable.</p>
 <li>
 <p>There's no need to remove <em>.git</em> folder while packing, as the system gets rid
 of removing it.</p>
+</li>
+<li>
+<p>Not really sure if this is different under the Ubuntu way of doing things, but while
+doing my checks, I found <code>dch -i</code> is a MUST in order to generate new packages, as
+the changes go hand in hand with changelog.</p>
 </li>
 <li>
 <p>I got some ideas from this other places too, just to build a more complete understading

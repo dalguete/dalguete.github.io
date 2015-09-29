@@ -4,6 +4,9 @@ About My Experiences Creating DEB Packages Plus Ubuntu's PPA
 As a noob in the *deb* packaging process, it was a bit painful to get the whole stuff
 in place. After much reading and headaches, I finally made it. Here my conclusions:
 
+- As first and super important first step, do all defined here <http://packaging.ubuntu.com/html/getting-set-up.html>.
+There's a lot of things to set up, but it's the mandatory first step.
+
 - Ubuntu documentation on how to make things work \(<http://packaging.ubuntu.com/html/packaging-new-software.html>\)
 is good, but it doesn't cover all aspects, as installation scripts or pre/post
 scripts. It just give some general approaches or links as last resource, that turned
@@ -27,6 +30,10 @@ but that's fine and desirable.
 
 - There's no need to remove *.git* folder while packing, as the system gets rid
 of removing it.
+
+- Not really sure if this is different under the Ubuntu way of doing things, but while
+doing my checks, I found `dch -i` is a MUST in order to generate new packages, as
+the changes go hand in hand with changelog.
 
 - I got some ideas from this other places too, just to build a more complete understading
 of things:
