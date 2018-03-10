@@ -6,7 +6,9 @@ in place. After much reading and headaches, I finally made it. Here my conclusio
 
 - As first and super important first step, do all defined here <http://packaging.ubuntu.com/html/getting-set-up.html>.
 There's a lot of things to set up, but it's the mandatory first step.
+
   - There a step that goes **pbuilder-dist <release> create**. That MUST be run from user's home folder. Doing so in any other folder will throw a lot of warnings.
+
 
 - Ubuntu documentation on how to make things work \(<http://packaging.ubuntu.com/html/packaging-new-software.html>\)
 is good, but it doesn't cover all aspects, as installation scripts or pre/post
